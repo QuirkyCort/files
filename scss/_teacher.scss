@@ -1,0 +1,13 @@
+.teacher {
+  margin-top: 1em;
+
+  table.classes {
+    margin-top: 1em;
+
+    td.delete {
+      cursor: pointer;
+      color: red;
+      padding-left: 1em;
+    }
+  }
+}

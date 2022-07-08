@@ -1,0 +1,207 @@
+#usernameDisplay {
+  cursor: pointer;
+  color: white;
+}
+
+.navbar {
+  min-height: 56px;
+}
+
+.getLink {
+  border: solid 1px white;
+  border-radius: 0.5em;
+  padding: 1px 10px;
+  background: white;
+  color: #17a2b8 !important;
+  cursor: pointer;
+}
+
+.class {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 56px;
+
+  .leftCol {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .rightCol {
+    position: fixed;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: #0046B6;
+    padding: 1em;
+
+    .progressArea {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: 108px;
+      overflow: hidden;
+
+      .progressSpinner {
+        margin-right: 5px;
+        position: relative;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .progressCircle {
+          background: green;
+          border-radius: 50%;
+          width: 0%;
+          height: 0%;
+          transition: width 0.5s, height 0.5s;
+        }
+
+        .progressSpinner {
+          position: absolute;
+          // top: 6px;
+          // left: 6px;
+        }
+      }
+    }
+
+    .dropArea {
+      border: dashed 3px darkgray;
+      border-radius: 1em;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 15em;
+      color: white;
+      font-size: 150%;
+
+      .message, .input {
+        text-align: center;
+        // pointer-events: none;
+      }
+      label {
+        background: white;
+        padding: 0.5em 1em;
+        border-radius: 1em;
+        color: black;
+      }
+      input {
+        visibility: hidden;
+      }
+    }
+    .dropArea.hover {
+      background: rgba(0,0,0,0.3);
+    }
+  }
+
+  div.teachers {
+    padding: 2em;
+    background: #46B600;
+    color: white;
+  }
+
+  div.students {
+    padding: 2em;
+    background: #A1B600;
+    color: white;
+    flex-grow: 1;
+  }
+
+  table.teachers, table.students {
+    margin-top: 1em;
+    width: 100%;
+    a {
+      color: #005bff;
+    }
+    tr {
+      transition: background-color 1s;
+    }
+    tr.new {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    th {
+      color: lightgray;
+    }
+    td {
+      color: black;
+    }
+    div.shareState {
+      display: inline;
+      margin-left: 1em;
+    }
+    div.share, div.delete {
+      display: inline;
+      margin-left: 1em;
+      cursor: pointer;
+    }
+    div.shareState, div.delete {
+      color: blue;
+    }
+    div.shareState.unshare, div.share {
+      color: green;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .class {
+    bottom: 70px;
+
+    .leftCol {
+      width: 100%;
+    }
+
+    .rightCol {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 70px;
+
+      #dropZone {
+        border: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 0em;
+        width: 100%;
+
+        .progressArea {
+          position: absolute;
+          left: 5px;
+          right: 180px;
+          overflow: hidden;
+          flex-wrap: wrap;
+          top: 0px;
+          bottom: 0px;
+          align-items: center;
+        }
+
+        .message {
+          display: none;
+        }
+
+        .input {
+          position: absolute;
+          right: 7px;
+          bottom: 6px;
+
+          label {
+            padding: 0.1em 1em;
+          }
+
+          input {
+            height: 0;
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}

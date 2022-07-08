@@ -1,0 +1,266 @@
+html, body {
+  height: 100%; }
+
+.clickable {
+  cursor: pointer;
+  color: blue; }
+
+.hide {
+  display: none !important; }
+
+.admin_users_edit .rolesFlex {
+  display: flex;
+  flex-wrap: wrap; }
+  .admin_users_edit .rolesFlex label {
+    padding-right: 2em; }
+
+#usernameDisplay {
+  cursor: pointer;
+  color: white; }
+
+.navbar {
+  min-height: 56px; }
+
+.getLink {
+  border: solid 1px white;
+  border-radius: 0.5em;
+  padding: 1px 10px;
+  background: white;
+  color: #17a2b8 !important;
+  cursor: pointer; }
+
+.class {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 56px; }
+  .class .leftCol {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; }
+  .class .rightCol {
+    position: fixed;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: #0046B6;
+    padding: 1em; }
+    .class .rightCol .progressArea {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-height: 108px;
+      overflow: hidden; }
+      .class .rightCol .progressArea .progressSpinner {
+        margin-right: 5px;
+        position: relative;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .class .rightCol .progressArea .progressSpinner .progressCircle {
+          background: green;
+          border-radius: 50%;
+          width: 0%;
+          height: 0%;
+          transition: width 0.5s, height 0.5s; }
+        .class .rightCol .progressArea .progressSpinner .progressSpinner {
+          position: absolute; }
+    .class .rightCol .dropArea {
+      border: dashed 3px darkgray;
+      border-radius: 1em;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 15em;
+      color: white;
+      font-size: 150%; }
+      .class .rightCol .dropArea .message, .class .rightCol .dropArea .input {
+        text-align: center; }
+      .class .rightCol .dropArea label {
+        background: white;
+        padding: 0.5em 1em;
+        border-radius: 1em;
+        color: black; }
+      .class .rightCol .dropArea input {
+        visibility: hidden; }
+    .class .rightCol .dropArea.hover {
+      background: rgba(0, 0, 0, 0.3); }
+  .class div.teachers {
+    padding: 2em;
+    background: #46B600;
+    color: white; }
+  .class div.students {
+    padding: 2em;
+    background: #A1B600;
+    color: white;
+    flex-grow: 1; }
+  .class table.teachers, .class table.students {
+    margin-top: 1em;
+    width: 100%; }
+    .class table.teachers a, .class table.students a {
+      color: #005bff; }
+    .class table.teachers tr, .class table.students tr {
+      transition: background-color 1s; }
+    .class table.teachers tr.new, .class table.students tr.new {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .class table.teachers th, .class table.students th {
+      color: lightgray; }
+    .class table.teachers td, .class table.students td {
+      color: black; }
+    .class table.teachers div.shareState, .class table.students div.shareState {
+      display: inline;
+      margin-left: 1em; }
+    .class table.teachers div.share, .class table.teachers div.delete, .class table.students div.share, .class table.students div.delete {
+      display: inline;
+      margin-left: 1em;
+      cursor: pointer; }
+    .class table.teachers div.shareState, .class table.teachers div.delete, .class table.students div.shareState, .class table.students div.delete {
+      color: blue; }
+    .class table.teachers div.shareState.unshare, .class table.teachers div.share, .class table.students div.shareState.unshare, .class table.students div.share {
+      color: green; }
+
+@media (max-width: 1024px) {
+  .class {
+    bottom: 70px; }
+    .class .leftCol {
+      width: 100%; }
+    .class .rightCol {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 70px; }
+      .class .rightCol #dropZone {
+        border: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 0em;
+        width: 100%; }
+        .class .rightCol #dropZone .progressArea {
+          position: absolute;
+          left: 5px;
+          right: 180px;
+          overflow: hidden;
+          flex-wrap: wrap;
+          top: 0px;
+          bottom: 0px;
+          align-items: center; }
+        .class .rightCol #dropZone .message {
+          display: none; }
+        .class .rightCol #dropZone .input {
+          position: absolute;
+          right: 7px;
+          bottom: 6px; }
+          .class .rightCol #dropZone .input label {
+            padding: 0.1em 1em; }
+          .class .rightCol #dropZone .input input {
+            height: 0;
+            width: 0; } }
+.classMedia div.teachersFiles, .classMedia div.studentsFiles {
+  display: flex;
+  flex-wrap: wrap; }
+  .classMedia div.teachersFiles .box, .classMedia div.studentsFiles .box {
+    border: solid 1px white;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 10em;
+    height: 11.5em;
+    position: relative; }
+    .classMedia div.teachersFiles .box .title, .classMedia div.studentsFiles .box .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      background: gray;
+      font-size: 75%;
+      opacity: 75%; }
+    .classMedia div.teachersFiles .box img, .classMedia div.studentsFiles .box img {
+      object-fit: contain;
+      width: 9em;
+      height: 9em; }
+    .classMedia div.teachersFiles .box .controls, .classMedia div.studentsFiles .box .controls {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 0.5em; }
+      .classMedia div.teachersFiles .box .controls .download, .classMedia div.studentsFiles .box .controls .download {
+        color: white; }
+      .classMedia div.teachersFiles .box .controls .delete, .classMedia div.studentsFiles .box .controls .delete {
+        cursor: pointer;
+        color: blue; }
+      .classMedia div.teachersFiles .box .controls .share, .classMedia div.studentsFiles .box .controls .share {
+        cursor: pointer;
+        color: green; }
+      .classMedia div.teachersFiles .box .controls .share.shared, .classMedia div.studentsFiles .box .controls .share.shared {
+        color: red; }
+@keyframes bounce {
+  10% {
+    transform: scaleY(0.3);
+    /* start by scaling to 30% */ }
+  30% {
+    transform: scaleY(1);
+    /* scale up to 100% */ }
+  60% {
+    transform: scaleY(0.5);
+    /* scale down to 50% */ }
+  80% {
+    transform: scaleY(0.75);
+    /* scale up to 75% */ }
+  100% {
+    transform: scaleY(0.6);
+    /* scale down to 60% */ } }
+    .classMedia div.teachersFiles .box .musicAnimation, .classMedia div.studentsFiles .box .musicAnimation {
+      pointer-events: none;
+      position: absolute;
+      top: 3.5em;
+      left: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      width: 3em;
+      height: 3em; }
+      .classMedia div.teachersFiles .box .musicAnimation span, .classMedia div.studentsFiles .box .musicAnimation span {
+        width: 0.5em;
+        height: 100%;
+        background-color: orange;
+        border-radius: 0.25em;
+        animation: bounce 2.2s ease infinite alternate;
+        content: ''; }
+        .classMedia div.teachersFiles .box .musicAnimation span:nth-of-type(2), .classMedia div.studentsFiles .box .musicAnimation span:nth-of-type(2) {
+          animation-delay: -2.2s;
+          /* Start at the end of animation */ }
+        .classMedia div.teachersFiles .box .musicAnimation span:nth-of-type(3), .classMedia div.studentsFiles .box .musicAnimation span:nth-of-type(3) {
+          animation-delay: -3.7s;
+          /* Start mid-way of return of animation */ }
+    .classMedia div.teachersFiles .box .musicAnimation.hide, .classMedia div.studentsFiles .box .musicAnimation.hide {
+      display: none; }
+
+.bigImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .bigImage img {
+    max-height: 80vh;
+    max-width: 80vw;
+    border: solid 2px gray; }
+
+.teacher {
+  margin-top: 1em; }
+  .teacher table.classes {
+    margin-top: 1em; }
+    .teacher table.classes td.delete {
+      cursor: pointer;
+      color: red;
+      padding-left: 1em; }

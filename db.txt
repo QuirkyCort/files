@@ -1,0 +1,39 @@
+CREATE TABLE `users` (
+  `userKey` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `userCode` VARCHAR(8),
+  `name` VARCHAR(200),
+  `password` VARCHAR(200),
+  `roles` VARCHAR(400),
+  `createDate` INTEGER,
+  `createBy` INTEGER,
+  `modifyDate` INTEGER,
+  `modifyBy` INTEGER
+);
+
+CREATE TABLE `classes` (
+  `classKey` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `classCode` VARCHAR(8),
+  `userCode` VARCHAR(8),
+  `description` INTEGER,
+  `createDate` INTEGER,
+  `createBy` INTEGER,
+  `modifyDate` INTEGER,
+  `modifyBy` INTEGER
+);
+
+CREATE TABLE `files` (
+  `fileKey` VARCHAR(10) PRIMARY KEY,
+  `classCode` VARCHAR(8),
+  `selfGenID` VARCHAR(10),
+  `userName` VARCHAR(200),
+  `fileName` VARCHAR(200),
+  `size` INTEGER,
+  `date` INTEGER,
+  `share` INTEGER,
+  `teacher` INTEGER,
+  `data` VARCHAR(10),
+  `createDate` INTEGER,
+  `createBy` INTEGER,
+  `modifyDate` INTEGER,
+  `modifyBy` INTEGER
+);

@@ -1,0 +1,10 @@
+.admin_users_edit {
+  .rolesFlex {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      padding-right: 2em;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+html, body {
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+  color: blue;
+}
+
+.hide {
+  display: none !important;
+}
+
+@import '_admin_users_edit.scss';
+@import '_class.scss';
+@import '_classMedia.scss';
+@import '_teacher.scss';

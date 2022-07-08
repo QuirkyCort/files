@@ -1,0 +1,129 @@
+.classMedia {
+  div.teachersFiles, div.studentsFiles {
+    display: flex;
+    flex-wrap: wrap;
+
+    .box {
+      border: solid 1px white;
+      padding: 0.5em;
+      margin: 0.5em;
+      width: 10em;
+      height: 11.5em;
+      position: relative;
+
+      .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        background: gray;
+        font-size: 75%;
+        opacity: 75%;
+      }
+
+      img {
+        object-fit: contain;
+        width: 9em;
+        height: 9em;
+      }
+
+      .controls {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 0.5em;
+
+        .download {
+          color: white;
+        }
+
+        .delete {
+          cursor: pointer;
+          color: blue;
+        }
+
+        .share {
+          cursor: pointer;
+          color: green;
+        }
+
+        .share.shared {
+          color: red;
+        }
+      }
+
+      @keyframes bounce {
+        10% {
+          transform: scaleY(0.3); /* start by scaling to 30% */
+        }
+
+        30% {
+          transform: scaleY(1); /* scale up to 100% */
+        }
+
+        60% {
+          transform: scaleY(0.5); /* scale down to 50% */
+        }
+
+        80% {
+          transform: scaleY(0.75); /* scale up to 75% */
+        }
+
+        100% {
+          transform: scaleY(0.6); /* scale down to 60% */
+        }
+      }
+
+      .musicAnimation {
+        pointer-events: none;
+        position: absolute;
+        top: 3.5em;
+        left: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        width: 3em;
+        height: 3em;
+
+        span {
+          width: 0.5em;
+          height: 100%;
+          background-color: orange;
+          border-radius: 0.25em;
+          animation: bounce 2.2s ease infinite alternate;
+          content: '';
+
+          &:nth-of-type(2) {
+            animation-delay: -2.2s; /* Start at the end of animation */
+          }
+
+          &:nth-of-type(3) {
+            animation-delay: -3.7s; /* Start mid-way of return of animation */
+          }
+        }
+      }
+
+      .musicAnimation.hide {
+        display: none;
+      }
+    }
+  }
+}
+
+.bigImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 80vh;
+    max-width: 80vw;
+    border: solid 2px gray;
+  }
+}
