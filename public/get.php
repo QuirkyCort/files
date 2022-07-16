@@ -6,11 +6,7 @@
   header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 8640000));
   header('Pragma: cache');
 
-  if (isset($_SERVER['HTTP_ORIGIN'])) {
-    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-    header('Access-Control-Allow-Credentials: true');
-    header('Access-Control-Max-Age: 8640000');
-  }
+  header('Access-Control-Allow-Origin: *');
 
   if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
