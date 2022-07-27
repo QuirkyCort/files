@@ -38,7 +38,7 @@
   </div>
 </main>
 
-<script src="js/page/mclass.js?v=a8e7d894"></script>
+<script src="js/page/mclass.js?v=b0d0a998"></script>
 <script src="js/page/class-ws.js?v=b8543ae2"></script>
 
 </body>

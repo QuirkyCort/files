@@ -15,7 +15,7 @@ var classPage = new function() {
     self.$dropArea = $('.dropArea');
     self.$progressArea = $('.progressArea');
 
-    self.IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png'];
+    self.IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
     self.SOUND_EXTENSIONS = ['wav', 'mp3', 'ogg', 'aac'];
 
     self.$addClass.click(self.addClass);
