@@ -420,7 +420,7 @@ var classPage = new function() {
       '</div>'
     );
 
-    let $audio = $('<audio></audio>');
+    let $audio = $('<audio preload="none"></audio>');
 
     let url = HOST + 'get/' + file.fileKey + '.' + self.getExtension(file.fileName);
     let extension = self.getExtension(file.fileName);
