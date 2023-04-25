@@ -72,6 +72,14 @@
         $randName = $files->randString(10);
         copy($_FILES['files']['tmp_name'][$i], FILES_DIR . $randName);
 
+        $classes = new Classes_DAO($db);
+        $result = $classes->getByCode($this->input['classCode']);
+        if ($classes->haveProperty($result['properties'], CLASSES_PROPERTIES_AUTOSHARE)) {
+          $share = 1;
+        } else {
+          $share = 0;
+        }
+
         $result = $files->add(
           $this->input['classCode'],
           $userName,
@@ -79,7 +87,8 @@
           $_FILES['files']['size'][$i],
           $teacher,
           $randName,
-          $this->input['selfGenID']
+          $this->input['selfGenID'],
+          $share
         );
         if ($result === false) {
           $this->errorMsg[] = 'Database error';

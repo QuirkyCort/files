@@ -80,8 +80,26 @@ var teacher = new function() {
     $description.find('a.icon').text('(Icon)');
     $description.find('a.icon').prop('href', HOST + 'mclass.php?class=' + c.code + '&user=' + readGET('user'));
 
-    var $action = $('<td class="delete">Delete</td>');
-    $action.click(function(){
+    var $autoShare = $('<td class="autoShare"></td>');
+    if (c.properties != null && c.properties.includes(CLASSES_PROPERTIES_AUTOSHARE)) {
+      $autoShare.text('Disable Autoshare');
+    } else {
+      $autoShare.text('Enable Autoshare');
+    }
+    $autoShare.click(function(){
+      showSpinner();
+      var request = {
+        Classes_toggleAutoShare: {
+          userCode: readGET('user'),
+          classCode: c.code
+        }
+      };
+      ajaxRequest2.handler['Classes_toggleAutoShare'] = self.classes_toggleAutoShare;
+      ajaxRequest2.request(request);
+    });
+
+    var $delete = $('<td class="delete">Delete</td>');
+    $delete.click(function(){
       confirmDialog('Delete class? All files in this class will be lost.', function() {
         showSpinner();
         var request = {
@@ -96,13 +114,23 @@ var teacher = new function() {
     });
 
     $class.append($description);
-    $class.append($action);
+    $class.append($autoShare);
+    $class.append($delete);
 
     return $class;
   };
 
   // Load into table
   this.classes_delete = function(data) {
+    if (data.status != 'OK') {
+      showErrorModal(data.errorMsg);
+      return;
+    }
+    self.loadClasses();
+  };
+
+  // Load into table
+  this.classes_toggleAutoShare = function(data) {
     if (data.status != 'OK') {
       showErrorModal(data.errorMsg);
       return;

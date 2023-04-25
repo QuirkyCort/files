@@ -68,5 +68,44 @@
       return $this->delete($match);
     }
 
+// Check if property is present in property string
+    static function haveProperty($properties, $property) {
+      if (strpos($properties, $property) === false) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    function addProperty($classKey, $property) {
+      $this->SELECT = '*';
+      $this->WHERE = 'classKey = ?';
+      $match = [
+        $classKey
+      ];
+      $result = $this->fetch($match);
+
+      $details = [
+        'properties' => $result['properties'] . $property
+      ];
+
+      return $this->updateAutoEntry($details, $match);
+    }
+
+    function removeProperty($classKey, $property) {
+      $this->SELECT = '*';
+      $this->WHERE = 'classKey = ?';
+      $match = [
+        $classKey
+      ];
+      $result = $this->fetch($match);
+
+      $details = [
+        'properties' => str_replace($property, '', $result['properties'])
+      ];
+
+      return $this->updateAutoEntry($details, $match);
+    }
+
   }
 ?>

@@ -1,6 +1,6 @@
 <?php
   define('HOST', 'https://files.aposteriori.com.sg/');
-  // define('HOST', 'http://localhost/files/public/');
+  // define('HOST', 'http://localhost/~cort/files/');
 
   define('FILES_DIR', '../../protected/files/');
 
@@ -16,4 +16,5 @@
     USERS_ROLE_USERS_EDIT => 'Edit Users',
   ];
 
+  define('CLASSES_PROPERTIES_AUTOSHARE', 'A');
 ?>

@@ -8,8 +8,8 @@ const https = require('https');
 const WebSocket = require('ws')
 
 const server = https.createServer({
-  cert: fs.readFileSync('/etc/letsencrypt/live/files.aposteriori.com.sg/cert.pem'),
-  key: fs.readFileSync('/etc/letsencrypt/live/files.aposteriori.com.sg/privkey.pem')
+  cert: fs.readFileSync('/etc/letsencrypt/live/a9i.sg/cert.pem'),
+  key: fs.readFileSync('/etc/letsencrypt/live/a9i.sg/privkey.pem')
 });
 
 const wss = new WebSocket.Server({ server });

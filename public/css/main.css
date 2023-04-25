@@ -264,3 +264,7 @@ html, body {
       cursor: pointer;
       color: red;
       padding-left: 1em; }
+    .teacher table.classes td.autoShare {
+      cursor: pointer;
+      color: green;
+      padding-left: 1em; }

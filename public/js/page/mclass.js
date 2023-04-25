@@ -344,7 +344,7 @@ var classPage = new function() {
     var $box = $(
       '<div class="box imageBox">' +
         '<div class="title"></div>' +
-        '<img draggable="false">' +
+        '<img draggable="false" loading="lazy">' +
         '<div class="controls">' +
           '<i class="far fa-copy copy"></i>' +
           '<a class="download"><i class="fas fa-cloud-download-alt"></i></a>' +

@@ -28,7 +28,7 @@
     }
 
 // Add new file
-    function add($classCode, $userName, $fileName, $size, $teacher, $data, $selfGenID) {
+    function add($classCode, $userName, $fileName, $size, $teacher, $data, $selfGenID, $share=0) {
       $data = [
         'fileKey' => $this->createKey(),
         'classCode' => $classCode,
@@ -36,7 +36,7 @@
         'fileName' => $fileName,
         'size' => $size,
         'date' => time(),
-        'share' => 0,
+        'share' => $share,
         'teacher' => $teacher,
         'data' => $data,
         'selfGenID' => $selfGenID

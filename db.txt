@@ -14,6 +14,7 @@ CREATE TABLE `classes` (
   `classKey` INTEGER PRIMARY KEY AUTOINCREMENT,
   `classCode` VARCHAR(8),
   `userCode` VARCHAR(8),
+  `properties` VARCHAR(20),
   `description` INTEGER,
   `createDate` INTEGER,
   `createBy` INTEGER,

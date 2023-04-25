@@ -28,8 +28,8 @@
         //return $passed;
       //}
 
-      $users = new Classes_DAO($db);
-      $results = $users->getAll($this->input['code']);
+      $classes = new Classes_DAO($db);
+      $results = $classes->getAll($this->input['code']);
       if ($results === false) {
         $this->errorMsg[] = 'Database error';
         return false;
@@ -39,7 +39,8 @@
       foreach ($results as $result) {
         $this->output['classes'][] = [
           'code' => $result['classCode'],
-          'description' => $result['description']
+          'description' => $result['description'],
+          'properties' => $result['properties']
         ];
       };
 
