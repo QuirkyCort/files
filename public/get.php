@@ -1,7 +1,6 @@
 <?php
   include '../protected/default.php';
 
-  session_cache_limiter('');
   header('Cache-Control: max-age=8640000');
   header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + 8640000));
   header('Pragma: cache');
