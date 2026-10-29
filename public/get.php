@@ -33,6 +33,11 @@
   $files = new Files_DAO($db);
   $file = $files->get($filename);
 
+  if (!$file) {
+    http_response_code(404);
+    echo 'File not found';
+    exit;
+  }
   header('Content-disposition: attachment; filename="'.$file['fileName'].'"');
   header('Content-Type: binary/octet-stream');
   readfile('../protected/files/' . $file['data']);
